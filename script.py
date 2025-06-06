@@ -37,7 +37,9 @@ labelsarr = []
 #laskuri, jos nimettömiä esimerkkejä
 counter = 0
 
-## Muuttaa määritelmät, lauseet, yms oikeaan muotoon, numeroi ne automaattisesti eri laskureilla
+# Muuttaa määritelmät, lauseet, yms oikeaan muotoon, numeroi ne automaattisesti eri laskureilla
+# matchobj on regexin match-objekti, josta saadaan tarvittavat tiedot. matchobj.groups() palauttaa listan, jossa on kaikki regexin ryhmät, jotka on määritelty sulkeilla. 
+# Tämän voi nähdä visuaalisesti esim. regex101.com-sivustolla.
 def definitions(matchobj):
 
     str = "#-"+matchobj.group(1).strip()+"\n" + matchobj.group(3).strip() + matchobj.group(4).strip() + " " + '%%"' +matchobj.group(2).strip() +'"|c_('+matchobj.group(4).strip().lower() +')%%'+ matchobj.group(6).strip() 
